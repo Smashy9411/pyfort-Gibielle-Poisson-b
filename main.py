@@ -1,1 +1,4 @@
-test push
+
+from epreuves_mathematiques import epreuve_roulette_mathematique
+
+print(epreuve_roulette_mathematique())
