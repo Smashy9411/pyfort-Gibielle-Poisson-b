@@ -140,6 +140,11 @@ def epreuve_roulette_mathematique():
 
 
 def epreuve_math():
+    """
+    Paramètre : /
+    sortie : fonction
+    role: choisi une fonction aléatoirement parmi celle épreuve maths
+    """
     alea = random.choice([epreuve_math_premier, epreuve_math_factorielle, epreuve_roulette_mathematique])
 
     return alea()
