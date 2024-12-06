@@ -59,7 +59,7 @@ def bonneteau():
             while reponse_maj not in liste_element:
                 reponse = str(input("Votre réponse :"))
 
-
+x
 
 
 
