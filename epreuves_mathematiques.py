@@ -30,6 +30,40 @@ def epreuve_math_factorielle():
         print("Incorrect ! La bonne réponse était", bonne_reponse,".")
         return False
 
+def est_premier(reponse):
+
+    if reponse <= 1:
+        return False
+    for i in range(2, int(reponse ** 0.5) + 1):
+        if reponse % i == 0:
+            return False
+    return True
+
+def premier_plus_proche(n):
+    nombre = n
+    if est_premier(n) == True:
+        proche = n
+
+    else:
+        while est_premier(n) == False:
+            n += 1
+            est_premier(n)
+        proche = n
+    return proche
+
+def epreuve_math_premier():
+    random = randint(10, 20)
+    reponse = int(input("Trouver le nombre premier le proche de : {}".format(str(random))))
+    print("Votre réponse:", reponse)
+    pi = premier_plus_proche(random)
+    if reponse == pi:
+        print("Correct! Vous avez gagné une clé.")
+        return True
+    else:
+        print("Dommage! Vous avez perdu, vous n'avez pas gagné de clé.")
+        return False
+
+
 def epreuve_roulette_mathematique():
     """
     Parametres : /
