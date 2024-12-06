@@ -1,3 +1,4 @@
+import random
 from random import randint
 
 def factorielle(n):
@@ -29,6 +30,66 @@ def epreuve_math_factorielle():
     else:
         print("Incorrect ! La bonne réponse était", bonne_reponse,".")
         return False
+
+def est_premier(reponse):
+    """
+    Parametre : entier
+    sortie : Booléen
+    role : Cela vérifie que le nombre est premier donc renvoie True si il l'est ou False si il ne l'est pas.
+    Cela vérifie également qu'il ne soit pas inférieur ou égal a 1
+
+
+    """
+
+    if reponse <= 1:
+        return False
+    for i in range(2, int(reponse ** 0.5) + 1):
+        if reponse % i == 0:
+            return False
+    return True
+
+def premier_plus_proche(n):
+    """
+    Parametre : entier
+    sortie : Booléen
+    role : Le but est de trouver l'entier premier le plus proche du nombre .
+    en utilisant la fonction précèdente, si elle affiche vrai alors le nombre premier ne change pas (stocké dans la variable proche)
+    si la fct est_premier() est False alors on utilise une boucle while tant que est_premier est False on ajoute plus 1
+    puis on stocke la réponse à la fin du tant que dans proche.
+
+    """
+
+    if est_premier(n) == True:
+        proche = n
+
+    else:
+        while est_premier(n) == False:
+            n += 1
+            est_premier(n)
+        proche = n
+    return proche
+
+def epreuve_math_premier():
+    """
+    Paramètre : /
+    sortie : Booléen
+    role : on utilise les fonctions précèdentes pour vérifier que l'utilisateur a mis la bonne réponse pour lui attribuer une clé ou non
+
+    """
+    random = randint(10, 20)
+    # choisi un nombre entre 10 et 20
+    reponse = int(input("Trouver le nombre premier le proche de : {}".format(str(random))))
+    print("Votre réponse:", reponse)
+    # Saisie l'affichage pour l'utilisateur
+    pi = premier_plus_proche(random)
+
+    if reponse == pi:
+        print("Correct! Vous avez gagné une clé.")
+        return True
+    else:
+        print("Dommage! Vous avez perdu, vous n'avez pas gagné de clé.")
+        return False
+
 
 def epreuve_roulette_mathematique():
     """
@@ -77,7 +138,16 @@ def epreuve_roulette_mathematique():
             print("Mauvaise réponse ! la bonne réponse était", resultat3,".")
             return False
 
+
 def epreuve_math():
+    """
+    Paramètre : /
+    sortie : fonction
+    role: choisi une fonction aléatoirement parmi celle épreuve maths
+    """
     alea = random.choice([epreuve_math_premier, epreuve_math_factorielle, epreuve_roulette_mathematique])
 
     return alea()
+
+
+
