@@ -1,4 +1,3 @@
 
-from epreuves_mathematiques import epreuve_roulette_mathematique
-
-print(epreuve_roulette_mathematique())
+from epreuves_mathematiques import epreuve_math
+print(epreuve_math())

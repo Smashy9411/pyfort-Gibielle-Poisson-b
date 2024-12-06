@@ -1,3 +1,4 @@
+import random
 from random import randint
 
 def factorielle(n):
@@ -136,3 +137,12 @@ def epreuve_roulette_mathematique():
         else:
             print("Mauvaise réponse ! la bonne réponse était", resultat3,".")
             return False
+
+
+def epreuve_math():
+    alea = random.choice([epreuve_math_premier, epreuve_math_factorielle, epreuve_roulette_mathematique])
+
+    return alea()
+
+
+
