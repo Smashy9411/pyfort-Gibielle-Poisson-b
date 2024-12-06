@@ -1,4 +1,3 @@
+from epreuves_hasard import bonneteau
 
-from epreuves_mathematiques import epreuve_roulette_mathematique
-
-print(epreuve_roulette_mathematique())
+print(bonneteau())
