@@ -24,6 +24,7 @@ def bonneteau():
     reponse = str(input("Votre réponse :"))
     reponse_maj = reponse.upper()
     while reponse_maj not in liste_element:
+        print("Veuillez entrer une lettre présente sur les bonneteaux.")
         reponse = str(input("Votre réponse :"))
         reponse_maj = reponse.upper()
 
@@ -32,16 +33,25 @@ def bonneteau():
         return True
     else:
         if reponse_maj == "A":
+            liste_element=["B","C"]
             print("Mauvaise réponse ! il vous reste une tentative.")
+            print("     " + " ---       ---       ")
             print("     " + "|   |     |   |     ")
             print("    " + "|  B  |   |  C  |   ")
             print("   " + "|       | |       | ")
             reponse = str(input("Votre réponse :"))
             reponse_maj = reponse.upper()
             while reponse_maj not in liste_element:
+                print("Veuillez entrer une lettre présente sur les bonneteaux restants.")
                 reponse = str(input("Votre réponse :"))
+                reponse_maj = reponse.upper()
+            if reponse_maj == bonneteau_cle:
+                print("Vous avez trouvé en 2 essais ! Bravo vous gagnez une clé.")
+                return True
         elif reponse_maj == "B":
+            liste_element=["A","C"]
             print("Mauvaise réponse ! il vous reste une tentative.")
+            print("     " + " ---       ---       ")
             print("     " + "|   |     |   |     ")
             print("    " + "|  A  |   |  C  |   ")
             print("   " + "|       | |       | ")
@@ -49,17 +59,28 @@ def bonneteau():
             reponse_maj = reponse.upper()
             while reponse_maj not in liste_element:
                 reponse = str(input("Votre réponse :"))
+                reponse_maj = reponse.upper()
+            if reponse_maj == bonneteau_cle:
+                print("Vous avez trouvé en 2 essais ! Bravo vous gagnez une clé.")
+                return True
         elif reponse_maj == "C":
+            liste_element=["A","B"]
             print("Mauvaise réponse ! il vous reste une tentative.")
+            print("     " + " ---       ---       ")
             print("     " + "|   |     |   |     ")
             print("    " + "|  A  |   |  B  |   ")
             print("   " + "|       | |       | ")
             reponse = str(input("Votre réponse :"))
             reponse_maj = reponse.upper()
             while reponse_maj not in liste_element:
+                print("Veuillez entrer une lettre présente sur les bonneteaux restants.")
                 reponse = str(input("Votre réponse :"))
+                reponse_maj = reponse.upper()
+            if reponse_maj == bonneteau_cle:
+                print("Vous avez trouvé en 2 essais ! Bravo vous gagnez une clé.")
+                return True
 
-x
+
 
 
 
