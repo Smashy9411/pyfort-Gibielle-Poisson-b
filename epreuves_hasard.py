@@ -29,7 +29,7 @@ def bonneteau():
         reponse_maj = reponse.upper()
 
     if reponse_maj == bonneteau_cle:
-        print("Trouvé ! Bravo vous gagnez une clé.")
+        print("Vous avez trouvé du premier coup ! Bravo vous gagnez une clé.")
         return True
     else:
         if reponse_maj == "A":
@@ -48,6 +48,9 @@ def bonneteau():
             if reponse_maj == bonneteau_cle:
                 print("Vous avez trouvé en 2 essais ! Bravo vous gagnez une clé.")
                 return True
+            else:
+                print("Mauvaise réponse, la bonne réponse était le bonneteau", bonneteau_cle)
+                return False
         elif reponse_maj == "B":
             liste_element=["A","C"]
             print("Mauvaise réponse ! il vous reste une tentative.")
@@ -63,6 +66,9 @@ def bonneteau():
             if reponse_maj == bonneteau_cle:
                 print("Vous avez trouvé en 2 essais ! Bravo vous gagnez une clé.")
                 return True
+            else:
+                print("Mauvaise réponse, la bonne réponse était le bonneteau", bonneteau_cle)
+                return False
         elif reponse_maj == "C":
             liste_element=["A","B"]
             print("Mauvaise réponse ! il vous reste une tentative.")
@@ -79,10 +85,10 @@ def bonneteau():
             if reponse_maj == bonneteau_cle:
                 print("Vous avez trouvé en 2 essais ! Bravo vous gagnez une clé.")
                 return True
+            else:
+                print("Mauvaise réponse, la bonne réponse était le bonneteau", bonneteau_cle)
+                return False
 
 
 
-
-
-
-
+def jeu_lance_des():
