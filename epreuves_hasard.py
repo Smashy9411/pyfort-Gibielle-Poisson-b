@@ -1,3 +1,4 @@
+import random
 from random import randint
 
 def bonneteau():
@@ -90,5 +91,81 @@ def bonneteau():
                 return False
 
 
+def affiche_de(face):
+    if face == 1:
+        print("-----")
+        print("|   |")
+        print("| 0 |")
+        print("|   |")
+        print("-----")
+    elif face == 2:
+        print("-----")
+        print("|  0|")
+        print("|   |")
+        print("|0  |")
+        print("-----")
+    elif face == 3:
+        print("-----")
+        print("|  0|")
+        print("| 0 |")
+        print("|0  |")
+        print("-----")
+    elif face == 4:
+        print("-----")
+        print("|0 0|")
+        print("|   |")
+        print("|0 0|")
+        print("-----")
+    elif face == 5:
+        print("-----")
+        print("|0 0|")
+        print("| 0 |")
+        print("|0 0|")
+        print("-----")
+    elif face == 6:
+        print("-----")
+        print("|0 0|")
+        print("|0 0|")
+        print("|0 0|")
+        print("-----")
 
 def jeu_lance_des():
+    essais = 3
+    while essais > 0:
+        print("Il vous reste", str(essais),"essai(s)")
+        input(print("Appuyer sur la touche 'Entrer' pour jouer"))
+        de = (randint(1,6), randint(1,6))
+        print("Le dé que vous avez lancé est le suivant: ")
+        affiche_de(de[0])
+        print("Le dé de votre adversaire est le suivant: ")
+        affiche_de(de[1])
+
+        if de[0] == 6:
+            print("Bravo ! Vous avez battu votre adversaire.")
+            print("Vous gagnez une clé !")
+            return True
+        if de[1] == 6:
+            print("Dommage, vous avez perdu.")
+            return False
+        if de[0]!=6 and de[1]!=6:
+            print("Personne n'a obtenu de 6.")
+            if essais == 0:
+                print("Vous n'avez plus d'essais possible ! Match nul.")
+                return False
+            essais -= 1
+            print("C'est reparti pour un nouvel essai !")
+
+def epreuve_hasard():
+    """
+    Paramètre : /
+    sortie : fonction
+    role: choisi une fonction aléatoirement parmi les épreuves de hasard
+    """
+    alea = random.choice([bonneteau, jeu_lance_des])
+    return alea()
+
+
+
+
+
+
