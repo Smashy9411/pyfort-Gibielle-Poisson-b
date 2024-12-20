@@ -1,3 +1,3 @@
-from epreuves_hasard import bonneteau
+from epreuves_logiques import *
 
-print(bonneteau())
+print(jeu_bataille_navale())
