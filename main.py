@@ -1,3 +1,3 @@
-from epreuves_logiques import *
+from epreuves_mathematiques import *
 
-print(jeu_bataille_navale())
+print(epreuve_math_factorielle())
