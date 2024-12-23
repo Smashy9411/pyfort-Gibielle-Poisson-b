@@ -34,7 +34,6 @@ def afficher_grille(grille, message):
     elif message == "Rappel de l'historique des tirs que vous avez effectués : ":
         print("Rappel de l'histoire des tirs que vous avez effectués : ")
         print("  +---+---+---+")
-        grille = grille_vide()
         for i, ligne in enumerate(grille):
             ligne_affichee = f"{i+1} |"
             for case in ligne:
@@ -87,9 +86,8 @@ grille_adversaire = init_adversaire()
 
 def tour(joueur, grille_tirs_joueur, grille_adversaire):
 
-    afficher_grille(grille_tirs_joueur, "Rappel de l'historique des tirs que vous avez effectués : ")
-
     if joueur == 0:
+        afficher_grille(grille_tirs_joueur, "Rappel de l'historique des tirs que vous avez effectués : ")
         ligne, colonne = demande_position()
     else:
         ligne, colonne = tir_aleatoire()
