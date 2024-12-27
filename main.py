@@ -1,3 +1,3 @@
-from epreuves_mathematiques import *
+from epreuve_finale import *
 
-print(epreuve_math_factorielle())
+print(chargement_donnees())
