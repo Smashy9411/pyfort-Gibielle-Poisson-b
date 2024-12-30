@@ -3,7 +3,7 @@ def introduction():
     print("-------------Bienvenue dans l'incroyable jeu Fort Boyard !!!-------------")
     print("")
     print("Voici les règles du jeu :")
-    print("Pour sortir d'ici, une seule solution récupérer 3 clés dans différentes épreuves et trouver le mot secret pour débloquer le trésor !")
+    print("Pour sortir d'ici, une seule solution : récupérer 3 clés dans différentes épreuves et trouver le mot secret pour débloquer le trésor !")
     print("Tu vas pouvoir constituer ton équipe et défier les dangers du Fort !!!")
     print("")
     print("Alors gare à toi, et bonne chance....")

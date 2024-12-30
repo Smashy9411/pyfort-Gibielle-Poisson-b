@@ -1,3 +1,3 @@
 from fonctions_utiles import *
 
-print(introduction())
+print(menu_epreuves())
