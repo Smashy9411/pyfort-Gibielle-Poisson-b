@@ -42,24 +42,22 @@ def composer_equipe():
         if est_leader == "oui":
             leader_existe = True
         if i == 0:
-            joueur1 = {"Nom": prenom, "Profession": profession, "Leader": est_leader, "Clé récupérer:": 0}
+            joueur1 = {"Nom": prenom, "Profession": profession, "Leader": est_leader, "Clé récupérée(s):": 0}
             equipe[1] = joueur1
         if i == 1:
-            joueur2 = {"Nom": prenom, "Profession": profession, "Leader": est_leader, "Clé récupérer": 0}
+            joueur2 = {"Nom": prenom, "Profession": profession, "Leader": est_leader, "Clé récupérée(s)": 0}
             equipe[2] = joueur2
         if i == 2:
-            joueur3 = {"Nom": prenom, "Profession": profession, "Leader": est_leader, "Clé récupérer": 0}
+            joueur3 = {"Nom": prenom, "Profession": profession, "Leader": est_leader, "Clé récupérée(s)": 0}
             equipe[3] = joueur3
     if not leader_existe:
         print("Tu n'as pas désigné de Leader pour votre équipe ! Le premier joueur sera donc automatiquement le Leader !")
         equipe[1]["Leader"] = "oui"
-    equipe["Clé remportée"] = 0
+    equipe["Clé remportée(s)"] = 0
     return equipe
 
 def menu_epreuves():
-    print("Tu dois quelle épreuves tu vas réaliser pour remporter des clés et sortir de cet endroit !")
-    print("")
-    print("Tu vois devoir choisir entre plusieurs épreuves et me donner le chiffre correspondant à l'épreuve que tu souhaites réaliser")
+    print("Tu dois choisir quelle épreuve tu vas réaliser pour remporter des clés et sortir de cet endroit !")
     print("")
     print("Voici les épreuves disponibles dans le Fort !")
     print("")
