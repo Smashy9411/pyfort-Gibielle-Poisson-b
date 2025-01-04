@@ -3,8 +3,8 @@
 ## **1. Présentation Générale**
 
 ### **Contributeurs :**
-- **[Gibielle Nicolas]** : Responsable de fonctions diverses.
-- **[Poisson Mathis]** : Responsable de fonctions diverses.
+- **Gibielle Nicolas** : Responsable de fonctions diverses.
+- **Poisson Mathis** : Responsable de fonctions diverses.
 
 ### **Description :**
 Ce jeu en python reprend l'émission bien connu de Fort Boyard où les invités doivent participer à différentes éprevues pour y gagner des clés et des indices pour réussir l'épreuve final et débloquer le trésor.
@@ -145,9 +145,27 @@ Ce jeu en python reprend l'émission bien connu de Fort Boyard où les invités 
  
 ## **3. Journal de bord**
 
-| **Date**       | **Utilisateur**       | **Comentaire**       |
-|----------------------|---------------------|---------------------|
-| Contenu ligne 1, A   | Contenu ligne 1, B | Contenu ligne 1, C |
-| Contenu ligne 2, A   | Contenu ligne 2, B | Contenu ligne 2, C |
-| Contenu ligne 3, A   | Contenu ligne 3, B | Contenu ligne 3, C |
-| Contenu ligne 4, A   | Contenu ligne 4, B | Contenu ligne 4, C |
+| **Date**             | **Utilisateur**    | **Comentaire**     |
+|----------------------|--------------------|--------------------|
+| 4 décembre           | Nicolas            | Premiers tests       |
+| 5 décembre           | Nicolas            | Ajout des premières fonction |
+| 6 décembre           | Nicolas et Mathis  | Fin de l'épreuve Maths |
+| 10 décembre          | Nicolas            | Fin de la fonction Harsard |
+| 13 décembre          | Nicolas            | modif sur fonction hasard  |
+| 20 décembre          | Nicolas            | modif sur fonction hasard  |
+| 23 décembre          | Nicolas            | Fin de l'épreuve bataille navale |
+| 27 décembre          | Nicolas            | Fin de l'épreuve Final     |
+| 30 décembre          | Nicolas            | Fin des fonctions utiles   |
+| 2 janvier            | Nicolas            | début de la fonction historique |
+| 4 décembre           | Nicolas            | Fin des dernières modifications |
+
+## **4. Bonus réalisés**
+- Si l'équipe ne contient qu'un seul joueur, pour les différentes épreuves, le choix du joueur ne sera pas demandé car il est seul.
+
+- Si aucun leader n'a été sélectionné, le jeu définira le premier joueur comme leader automatiquement.
+
+- Lors d'une demande au joueur, si la réponse n'est pas du bon type, au lieu de renvoyer une erreur, elle précisera que cette forme de réponse c'est pas la bonne.
+
+- Ajout de la fonction d'historique des parties dans un fichier historique.txt avec différents paramètres comme le joueur avec le plus de clés récupérées.
+
+  
