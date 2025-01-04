@@ -5,11 +5,11 @@ def bonneteau():
     """
     Parametres : /
     sortie : Booléen
-    rôle : le joeueur va choisir aléatoirement un des trois bonneteau pour essayer de découvrir la clé et il posède 2 tentatives.
+    rôle : le joueur va choisir aléatoirement un des trois bonneteaux pour essayer de découvrir la clé et il possède 2 tentatives.
     Si le joueur trouve le clé la fonction retourne True sinon elle retourne False.
     """
     liste_element=["A","B","C"]
-    tentative = 2
+
     print("Bienvenue à l'épreuve des Bonneteaux !")
     print("Les règles sont simples. Vous avez 2 tentatives pour trouver la clé située sous un des trois Bonneteaux que nous allons vous montrer.")
     print("Voici les Bonneteaux :")
@@ -92,6 +92,11 @@ def bonneteau():
 
 
 def affiche_de(face):
+    """
+        Paramètre : face
+        sortie : la face du dé correspondante
+        role : renvoyer au joueur les dé aléatoirement tiré pour le jeu
+        """
     if face == 1:
         print("-----")
         print("|   |")
@@ -130,6 +135,14 @@ def affiche_de(face):
         print("-----")
 
 def jeu_lance_des():
+    """
+        Paramètre : /
+        sortie : Booléen
+        role : Renvoie deux faces de dés pour le joueur et l'adversaire pour les comparer et définir le gagnant
+        """
+    print("Bienvenue dans l'épreuve des lancés de dés !!!")
+    print("")
+    print("Le but est de lancer les dés et d'obtenir un 6 pour battre votre adversaire. Mais si il en obtient un avant vous, vous aurez perdu.")
     essais = 3
     while essais > 0:
         print("Il vous reste", str(essais),"essai(s)")
@@ -149,10 +162,12 @@ def jeu_lance_des():
             return False
         if de[0]!=6 and de[1]!=6:
             print("Personne n'a obtenu de 6.")
+            essais -= 1
             if essais == 0:
                 print("Vous n'avez plus d'essais possible ! Match nul.")
+                print("Vous ne gagnez donc pas de clé.")
                 return False
-            essais -= 1
+
             print("C'est reparti pour un nouvel essai !")
 
 def epreuve_hasard():

@@ -1,6 +1,11 @@
 from random import randint
 
-def suivi(joueur):
+def suivi():
+    """
+        Paramètre :
+        sortie : 1 ou 0
+        role : Savoir à qui est le tour entre le joueur et l'adversaire
+        """
     suivis = 1
     if suivis == 1:
         print("C'est à votre tour de jouer.")
@@ -11,6 +16,12 @@ def suivi(joueur):
     return suivis
 
 def grille_vide():
+    """
+        Paramètre : /
+        sortie : tableau
+        role : Définie une simple grille vide
+
+        """
     grille = [
         [" ", " ", " "],
         [" ", " ", " "],
@@ -20,6 +31,12 @@ def grille_vide():
 
 
 def afficher_grille(grille, message):
+    """
+            Paramètre : grille à afficher et message correspondant à différente grille
+            sortie : tableau
+            role : en fonction du message reçu, cette fonction va soit renvoie une grille avec nos bateaux soit la grille correspondant à nos précédents tir
+
+            """
     if message == "Voici votre grille de jeu avec vos bateaux: ":
         print("Voici votre grille de jeu avec vos bateaux: ")
         print("  +---+---+---+")
@@ -44,6 +61,12 @@ def afficher_grille(grille, message):
 
 
 def demande_position():
+    """
+            Paramètre : /
+            sortie : ligne et colonne
+            role : demander au joueur des coordonnées pour placer ses bateaux sur sa grille
+
+            """
     ligne = int(input("Entrez une ligne entre 1 et 3: "))
     while ligne < 0 or ligne > 3:
         ligne = int(input("Entrez une ligne entre 1 et 3: "))
@@ -55,6 +78,12 @@ def demande_position():
     return (ligne, colonne)
 
 def init():
+    """
+            Paramètre : /
+            sortie : grille
+            role : permet au joueur de placé ses bateaux sur sa grille avec l'appel d'autres fonctions
+
+            """
     grille = grille_vide()
     for i in range(2):
         print("Placez votre Bateau", i + 1, "sur la grille: ")
@@ -67,6 +96,12 @@ def init():
     return grille
 
 def init_adversaire():
+    """
+            Paramètre : /
+            sortie : grille
+            role : Place les bateaux de l'adversaire aléatoirement sur la grille
+
+            """
     grille = grille_vide()
     for i in range(2):
         ligne2 = randint(0, 2)
@@ -78,6 +113,12 @@ def init_adversaire():
     return grille
 
 def tir_aleatoire():
+    """
+            Paramètre : /
+            sortie : coordonnées
+            role : renvoie aléatoirement les coordonnées de tir de l'adversaire
+
+            """
     return (randint(0, 2), randint(0, 2))
 
 grille_tirs_joueur = grille_vide()
@@ -85,6 +126,12 @@ grille_tirs_joueur = grille_vide()
 grille_adversaire = init_adversaire()
 
 def tour(joueur, grille_tirs_joueur, grille_adversaire):
+    """
+            Paramètre : joueur, grilles des tirs du joueur et celle de l'adversaire
+            sortie : /
+            role : permet de demander au joueur où il souhaite tirer
+
+            """
 
     if joueur == 0:
         afficher_grille(grille_tirs_joueur, "Rappel de l'historique des tirs que vous avez effectués : ")
@@ -115,6 +162,12 @@ def tour(joueur, grille_tirs_joueur, grille_adversaire):
 
 
 def gagne(grille_tirs_joueur):
+    """
+            Paramètre : grille des tirs du joueur
+            sortie : booléen
+            role : vérifie si le joueur ou l'adversaire a détruit les bateaux de l'autre
+
+            """
     compteur_touches = 0
     for ligne in grille_tirs_joueur:
         compteur_touches += ligne.count('x')
@@ -127,6 +180,12 @@ def gagne(grille_tirs_joueur):
 
 
 def jeu_bataille_navale():
+    """
+            Paramètre : /
+            sortie : booléen
+            role : Corps du jeu de la bataille navale, utilise les fonctions précédentes pour faire fonctionner le jeu
+
+            """
     print("Bienvenue dans le jeu de Bataille Navale !")
     print("Règles :")
     print("1. Chaque joueur dispose d'une grille 3x3.")

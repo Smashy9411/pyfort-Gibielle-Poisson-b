@@ -78,16 +78,18 @@ def epreuve_math_premier():
     """
     nb_hasard = randint(10, 20)
     # choisi un nombre entre 10 et 20
-    reponse = int(input("Trouver le nombre premier le proche de : {}".format(str(nb_hasard))))
+    reponse = int(input("Trouver le nombre premier le proche de {}: ".format(str(nb_hasard))))
     print("Votre réponse:", reponse)
     # Saisie l'affichage pour l'utilisateur
     pi = premier_plus_proche(nb_hasard)
 
     if reponse == pi:
         print("Correct! Vous avez gagné une clé.")
+        print("")
         return True
     else:
-        print("Dommage! Vous avez perdu, vous n'avez pas gagné de clé.")
+        print("Dommage! Vous avez perdu, vous n'avez pas gagné de clé. La bonne réponse était " + str(pi) + " .")
+        print("")
         return False
 
 
@@ -99,6 +101,7 @@ def epreuve_roulette_mathematique():
     aléatoirement entre la soustraction, la multiplication et l'addition. Si le résultat est bon, retourne Vrai sinon retourne Faux.
     """
     print("Épreuve de la Roulette")
+    print("")
     n1 = randint(0, 20)
     n2 = randint(0, 20)
     n3 = randint(0, 20)
@@ -107,15 +110,19 @@ def epreuve_roulette_mathematique():
     operation = ["+","-","*"]
     type_op = randint(0, 2)
     print("Nombres sur la roulette : ["+str(n1)+","+str(n2)+","+str(n3)+","+str(n4)+","+str(n5)+"]")
+    print("")
     if operation[type_op] == "+":
         print("Calculez le résultat en combinant ces nombres avec une addition")
+        print("")
         resultat1 = n1+n2+n3+n4+n5
         rep1 = int(input("Votre réponse: "))
         if rep1 == resultat1:
             print("Bonne réponse ! Vous avez gagné une clé.")
+            print("")
             return True
         else:
             print("Mauvaise réponse ! La bonne réponse était", resultat1,".")
+            print("")
             return False
     if operation[type_op] == "-":
         print("Calculez le résultat en combinant ces nombres avec une soustraction")
